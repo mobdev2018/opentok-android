@@ -26,17 +26,17 @@ import com.tch.conference.fragment.HomeFragment;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class HomeActivity extends FragmentActivity {
 
-    @InjectView(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
-    @InjectView(R.id.list_slidermenu)
+    @BindView(R.id.list_slidermenu)
     ListView mDrawerList;
-    @InjectView(R.id.tvTitle)
+    @BindView(R.id.tvTitle)
     public TextView tvTitle;
 
     FragmentTransaction fragmentTransaction;
@@ -51,7 +51,7 @@ public class HomeActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         int width = getResources().getDisplayMetrics().widthPixels/4;
         DrawerLayout.LayoutParams params = (android.support.v4.widget.DrawerLayout.LayoutParams)mDrawerList.getLayoutParams();
@@ -220,13 +220,13 @@ public class HomeActivity extends FragmentActivity {
     }
 
     static class ViewHolder {
-        @InjectView(R.id.rlMain)
+        @BindView(R.id.rlMain)
         RelativeLayout rlMain;
-        @InjectView(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

@@ -10,8 +10,8 @@ import android.webkit.WebView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import com.tch.conference.HomeActivity;
 import com.tch.conference.R;
@@ -25,11 +25,11 @@ public class HomeFragment extends Fragment {
 
     ArrayList<HashMap<String, String>> listPost = new ArrayList<HashMap<String, String>>();
 
-    @InjectView(R.id.leftView)
+    @BindView(R.id.leftView)
     View leftView;
-    @InjectView(R.id.rightView)
+    @BindView(R.id.rightView)
     View rightView;
-    @InjectView(R.id.webView)
+    @BindView(R.id.webView)
     WebView mWebView;
 
     private VideoView mVideoView;
@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         String url = "http://service1.rumbletalk.net/h:F:ldkn/";
         mWebView.getSettings().setJavaScriptEnabled(true);
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
 
     static class ViewHolder {
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

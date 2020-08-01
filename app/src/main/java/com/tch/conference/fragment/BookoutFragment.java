@@ -39,8 +39,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.tch.conference.MainActivity;
 import com.tch.conference.R;
 
@@ -57,15 +57,15 @@ public class BookoutFragment extends Fragment implements Session.SessionListener
     private Runnable showLeftTimeRunnable;
     private HttpURLConnection urlConnection;
 
-    @InjectView(R.id.publisherViewContainer)
+    @BindView(R.id.publisherViewContainer)
     RelativeLayout publisherViewContainer;
-    @InjectView(R.id.subscriberViewContainer)
+    @BindView(R.id.subscriberViewContainer)
     RelativeLayout subscriberViewContainer;
-    @InjectView(R.id.otherViewsContainer)
+    @BindView(R.id.otherViewsContainer)
     GridLayout otherViewsContainer;
-    @InjectView(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
-    @InjectView(R.id.progressBar)
+    @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
     private LinearLayout.LayoutParams publisherParams;
@@ -93,7 +93,7 @@ public class BookoutFragment extends Fragment implements Session.SessionListener
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_breakout, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         mainActivity = (MainActivity)getActivity();
         mStreams = new ArrayList<Stream>();
@@ -151,7 +151,7 @@ public class BookoutFragment extends Fragment implements Session.SessionListener
 
     static class ViewHolder {
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 
